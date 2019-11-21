@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 //Dirección de la base de datos 
-const URI = 'mongodb://localhost/mean-crud';
+const URI = 'mongodb://mongo:27017/mean-crud';
 
 mongoose.connect(URI)
     .then(db => console.log('DB conectada'))
