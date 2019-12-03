@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-const {Schema} = mongoose;
+const { Schema } = mongoose;
 
 const StudentSchema = new Schema({
-    nua: {type: Int, required: true},
+    nua: {type: Number, required: true},
     nombre: {type: String, required: true},
     apellidos: {type: String, required: true},
     materia: {type: String, required: true}
