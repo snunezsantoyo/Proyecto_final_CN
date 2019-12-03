@@ -2,6 +2,10 @@ const Estudiante = require('../models/student');
 
 const studentCtrl = {};
 
+studentCtrl.index = (req, res) =>{
+   res.render('index');
+}
+
 studentCtrl.getStudents = async (req, res) =>{
    const estudiantes = await Estudiante.find();
    res.json(estudiantes);
