@@ -12,6 +12,7 @@ app.use(morgan('dev')); //Registra las peticiones
 app.use(express.json()); //Entender codigo Json
 
 //Routes 
+app.use('/api/students' ,require('./routes/estudiantes.routes'));
 
 //Iniciado el servidor 
 app.listen(3000, () =>{
