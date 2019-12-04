@@ -1,0 +1,24 @@
+<div class="container d-flex justify-content-center">
+    <div class="col-md-6 ">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/edit-alumno/{{alum._id}}?_method=PUT" method="POST" >
+                        <input type="hidden" name="_method" value="PUT">
+                            <div class="form-group">
+                                <input type="text" name="name" autofocus placeholder="Ingrese nombre" class="form-control" autocomplete="off" value="{{alum.name}}">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="email" placeholder="Ingrese email" class="form-control" autocomplete="off" value="{{alum.email}}">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="nua" placeholder="Ingrese nua" class="form-control" autocomplete="off" value="{{alum.nua}}">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="id_huella" placeholder="Ingrese ID de la huella" class="form-control" autocomplete="off" value="{{alum.id_huella}}">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+</div>

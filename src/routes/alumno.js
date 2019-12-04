@@ -16,10 +16,6 @@ router.post('/alumno/signin', async (req, res) => {     //controla el boton de B
     if(nua_Alumno) {
 
       //Comunicacion serial con arduino
-
-      
-
-      
       req.flash('success_node', 'El NUA está registrado.');
       res.redirect('/alumno/signin');
 
@@ -29,8 +25,6 @@ router.post('/alumno/signin', async (req, res) => {     //controla el boton de B
       res.redirect('/alumno/signin');
       console.log(error_node);
     }
-
-
   
 });
 

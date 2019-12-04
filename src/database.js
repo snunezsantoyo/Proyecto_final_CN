@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 mongoose.set('useFindAndModify', false);
-mongoose.connect('mongodb://localhost/FingerPrint', {
+mongoose.connect('mongodb://localhost/Check', {
   useCreateIndex: true,
   useNewUrlParser: true
 })

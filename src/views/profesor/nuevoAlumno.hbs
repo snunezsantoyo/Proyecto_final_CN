@@ -1,0 +1,73 @@
+
+{{#each errors}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{text}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{{/each}}
+
+<div class="container col-md-12">
+    <div class="jumbotron ">
+        <div class="row justify-content-center">
+            <h1 class="">Registro de estudiantes</h1>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/addalumno" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="name" autofocus placeholder="Ingrese nombre" class="form-control" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="email" placeholder="Ingrese email" class="form-control" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="nua" placeholder="Ingrese nua" class="form-control" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="id_huella" placeholder="Ingrese ID de la huella" class="form-control" autocomplete="off">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container p-5">
+                <table class="table table-bordered table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Nua</th>
+                            <th>Id huella</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        {{#each alumnos}}
+                        <tr>
+                            <td>{{name}}</td>
+                            <td>{{email}}</td>
+                            <td>{{nua}}</td>
+                            <td>{{id_huella}}</td>
+
+                            <td>
+                                <a href="/deletealumno/{{_id}}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                <a href="/editalumno/{{_id}}" class="btn btn-info"><i class="fa fa-edit"></i></a>
+                            </td>
+                        </tr>
+                        {{/each}}
+                        
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
