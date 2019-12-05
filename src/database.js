@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 mongoose.set('useFindAndModify', false);
-mongoose.connect('mongodb://localhost/Check', {
+mongoose.connect('mongodb://mongo:27017/Check', {
   useCreateIndex: true,
   useNewUrlParser: true
 })
