@@ -4,34 +4,11 @@ const path = require('path');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const flash = require('connect-flash');
-//const Serialport = require ('serialport');    
-//const Readline = Serialport.parsers.Readline;
-//const parser = new Readline();
 
 // Initializations
 const app = express();
 require('./database');
 
-  /*    const mySerial = new Serialport('/COM5',{     //Se le indica el puerto y la velocidad de transmisión
-      baudRate : 57600
-      });
-
-      mySerial.on('open', function(){           //Manda este msj a consola cuando el puerto serial está activo
-      console.log('Opened Serialport');
-      });*/
-
-/*mySerial.on('data', function (data){      //Recibe los datos y los imprime en consola
-      
-      console.log(data.toString());
-    
-      });
-mySerial.write('E', (err) => {
-        if(err) {
-          console.log('error on write', err.message);
-        }
-        console.log('mensaje eviado');
-
-      }); */
 
 app.set('port', process.env.PORT || 3000);
 
