@@ -7,6 +7,7 @@ router.get('/profesor/nuevoalumno', async (req, res) => {
   });
 
   router.post('/addalumno', async (req, res) =>{
+    const alumnos = await Alumno.find();
     const {name, email, nua, id_huella}=req.body;
     const errors=[];
     if(!name || !email || !nua || !id_huella){
@@ -15,12 +16,14 @@ router.get('/profesor/nuevoalumno', async (req, res) => {
 
     if(errors.length>0){ 
         res.render('profesor/nuevoAlumno', {
+            alumnos,
             errors
         });
         
     }else{
         const alum = new Alumno(req.body);
         await alum.save();
+        req.flash('success_node', 'Registro exitoso');
         res.redirect('profesor/nuevoAlumno');
     }
   });
